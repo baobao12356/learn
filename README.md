@@ -26,7 +26,8 @@ IMG Tags  use (require('relative path'))
 <br />
 自我查找原因：webpack配置有问题，url-loader  css-loader后面的配置项（?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:2]）可能更改了路径，但是自己一直找不到解决的方法。
 <br />
-请列为指出此项目的错误之处，万分感谢
+
+请列位指出此项目的错误之处，万分感谢
 
 
 
@@ -41,4 +42,31 @@ Self reasons: webpack configuration problems, configuration item url-loader behi
 <br />
 
 Please list the error of this project, thank you very much！
+
+
+
+
+
+技术领域：
+react<br />
+webpack<br />
+express<br />
+react-router<br />
+
+<br />
+
+ES6<br />
+SCSS<br />
+
+
+热加载－－两种方式<br />
+1、webpack-dev-server<br />
+2、webpack-dev-middleware和webpack-hot-middleware
+
+<br />
+
+
+还在陆续加入新的知识
+
+
 
