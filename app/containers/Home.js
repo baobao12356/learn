@@ -16,9 +16,8 @@ class Home extends React.Component {
 		return(
 			<div>
 		        this is page web123
-		    {/*<img src={lake} alt="湖"/>*/}
-		        
-		        <img src="app/img/lake.jpg" alt="湖"/>
+		    	<img src={lake} alt="湖"/>
+		       <img src={require('../img/lake.jpg')} alt="湖"/>
 		    </div>
 		)
 	}

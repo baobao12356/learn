@@ -5,6 +5,8 @@ import { Link } from 'react-router'
 import cx from 'classnames'; 
 import s from './Nav.scss';
 
+console.log(s)
+
 class Nav extends React.Component {
 	constructor(props) {
 		super(props);
@@ -12,6 +14,7 @@ class Nav extends React.Component {
 	}
 	
 	render() {
+		// //"nav clearfix"
 		return(
 			<ul role="nav" className={cx(s.nav,s.clearfix)}>
 				<li><Link to="/">home</Link></li>		

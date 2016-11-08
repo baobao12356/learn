@@ -17,11 +17,13 @@ module.exports = {
 	      },
 	      {
             test: /\.scss$/,
-            loaders: [
-            		"style-loader",
-            		'css-loader?{"sourceMap":true,"modules":true,"localIdentName":"[name]_[local]_[hash:base64:3]","minimize":false}',  
-            		"sass-loader?sourceMap",
-            	]
+            // loaders: [
+            // 		"style-loader",
+            // 		'css-loader?{"sourceMap":true,"modules":true,"localIdentName":"[name]_[local]_[hash:base64:3]","minimize":false}',  
+            // 		"sass-loader?sourceMap",
+            // 	]
+            // loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:2]", "sass?sourceMap"]
+          	loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:2]", "sass"]
           },
           {
               test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -33,7 +35,8 @@ module.exports = {
           },
 	      {
 	        test: /\.css$/,
-	        loader: 'style!css?modules!postcss'//添加对样式表的处理   
+	        loader: 'style!css?modules!postcss'//添加对样式表的处理  
+	        // loader: 'style!css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:2]' 
 	      },
 	      {
 	        test: /\.(js|jsx?)$/,

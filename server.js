@@ -30,7 +30,7 @@ app.use(require("webpack-hot-middleware")(compiler,{
 
 
 // serve our static stuff like index.css
-app.use(express.static(path.join(__dirname, '/')))
+app.use(express.static(path.join(__dirname, 'app')))
 
 
 
