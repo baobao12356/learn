@@ -1,6 +1,8 @@
 import React,{PropTypes} from 'react';
-
-import config from '../source/config.json';
+import ReactDOM from 'react-dom';
+import cx from 'classnames'; 
+import s from './PageFour.scss';
+import n from '../base/Base.css';
 
 class Greater extends React.Component {
 	constructor(props) {
@@ -13,7 +15,7 @@ class Greater extends React.Component {
 	render() {
 		return(
 			<div>
-		        {config.greetText}
+		        four  four  four
 		    </div>
 		)
 	}

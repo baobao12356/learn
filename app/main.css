@@ -7,10 +7,18 @@ html {
   box-sizing: inherit;
 }
 
+a{
+	text-decoration: none;color: #000;
+}
 
+li{
+	list-style-type: none
+}
 body {
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul {
