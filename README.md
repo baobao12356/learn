@@ -4,7 +4,9 @@ learn webpack react about my web Station
 运行项目：
 
 <div style="width:100%; height:30px; background-color:#ccc; line-height:30px; ">
-	npm i
+	1、npm i
+	2、npm run play
+	3、localhost：8000
 </div>
 
 <br />
