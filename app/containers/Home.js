@@ -1,6 +1,8 @@
 import React,{PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 
+import { connect } from 'react-redux';
+import { environment } from '../redux/actions/action';
 import cx from 'classnames'; 
 
 import n from '../base/Base.css';
@@ -12,16 +14,29 @@ class Home extends React.Component {
 		
 	}
 	componentDidMount() {
-		
+		const { dispatch } = this.props;
+		const data={
+			value:'2222'
+		}
+		dispatch(environment(data))
 	}
 	render() {
+		console.log('-------',this.props.value)
 		return(
 			<div>
-		        this is page web123
 		       <img src={require('../img/lake.jpg')} alt="湖"/>
 		    </div>
 		)
 	}
 }
+const ValueMapState = (state) => {
+    const {environment:{value}} = state;
+    return {
+        value
+    }
+};
 
-export default Home
+
+export default connect(ValueMapState)(Home)
+
+

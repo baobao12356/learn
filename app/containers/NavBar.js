@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 
 
 import Home from './Home';
+import NavLink from '../components/NavLink';
 
 import cx from 'classnames'; 
 import s from './NavBar.scss';//导入
@@ -19,11 +20,11 @@ class Nav extends React.Component {
 		
 		return(
 			<ul role="nav" className={cx(s.nav,s.clearfix)}>
-				<li><Link to="/">home</Link></li>		
-				<li><Link to="/one">pageOne</Link></li>			
-				<li><Link to="/two">pageTwo</Link></li>			
-				<li><Link to="/three">pageThree</Link></li>			
-				<li><Link to="/four">pageFour</Link></li>			
+				<li><NavLink to="/" onlyActiveOnIndex={true}>home</NavLink></li>		
+				<li><NavLink to="/one">pageOne</NavLink></li>			
+				<li><NavLink to="/two">pageTwo</NavLink></li>			
+				<li><NavLink to="/three">pageThree</NavLink></li>			
+				<li><NavLink to="/four">pageFour</NavLink></li>			
 			</ul>
 		)
 	}

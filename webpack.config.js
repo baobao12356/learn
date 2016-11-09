@@ -22,8 +22,8 @@ module.exports = {
             // 		'css-loader?{"sourceMap":true,"modules":true,"localIdentName":"[name]_[local]_[hash:base64:3]","minimize":false}',  
             // 		"sass-loader?sourceMap",
             // 	]
-            // loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:2]", "sass?sourceMap"]
-          	loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:2]", "sass"]
+            // loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass?sourceMap"]
+          	loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass"]
           },
           {
               test: /\.(png|jpg|jpeg|gif|svg)$/,

@@ -40,7 +40,7 @@ So stick it out and hope someone can help me to solve this problem.
 
 Self reasons: webpack configuration problems, configuration item url-loader behind css-loader(? SourceMap&modules&localIdentName=[name]_[local]_[hash:base64:2]) may change the path, but he could not find a solution.
 <br />
-
+<br />
 Please list the error of this project, thank you very much！
 
 
@@ -57,6 +57,7 @@ react-router<br />
 
 ES6<br />
 SCSS<br />
+redux+react-redux+redux-devTools<br />
 
 
 热加载－－两种方式<br />

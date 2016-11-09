@@ -1,11 +1,18 @@
 import React,{PropTypes} from 'react';
 import {ReactDOM} from 'react-dom';
 import { render } from 'react-dom';
-import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import { hashHistory } from 'react-router';
+import rootReducer from './redux/reducers'
+import { createStore } from 'redux';
+import configureStore from './redux/configReducer';
 
 import Root from './routes/Root'
 
+let store=configureStore()
+// let store=createStore(rootReducer)
+
+
 render(
-	<Root />
+	<Root store={store} history={hashHistory}/>
 	, document.getElementById('root')
 );
