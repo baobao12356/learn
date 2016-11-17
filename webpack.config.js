@@ -1,5 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+
 
 module.exports = {
 	devtool: 'eval-source-map',//配置生成Source Maps，选择合适的选项
@@ -43,7 +45,7 @@ module.exports = {
 	        exclude: /node_modules/,
 	        loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
 	        query: {
-	          presets: ['es2015','react'],
+	          presets: ['es2015','stage-0','react'],
 	          "env": {
 					    "development": {
 					    "plugins": [["react-transform", {
@@ -64,6 +66,12 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 	      template: __dirname + "/app/index.html"//new 一个这个插件的实例，并传入相关的参数
+	    }),
+	    // new OpenBrowserPlugin({      //dev-server 具有这个功能
+	    //   url: 'http://localhost:8000'
+	    // }),
+	    new webpack.DefinePlugin({
+	    	__DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
 	    }),
 	    new webpack.HotModuleReplacementPlugin(),//热加载插件
 	    new webpack.optimize.OccurenceOrderPlugin(true),

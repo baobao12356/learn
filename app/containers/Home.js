@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { environment } from '../redux/actions/action';
 import cx from 'classnames'; 
-
 import n from '../base/Base.css';
 
 
@@ -18,10 +17,10 @@ class Home extends React.Component {
 		const data={
 			value:'2222'
 		}
-		dispatch(environment(data))
+		// dispatch(environment(data))
 	}
 	render() {
-		console.log('-------',this.props.value)
+		
 		return(
 			<div>
 		       <img src={require('../img/lake.jpg')} alt="湖"/>
@@ -35,7 +34,6 @@ const ValueMapState = (state) => {
         value
     }
 };
-
 
 export default connect(ValueMapState)(Home)
 

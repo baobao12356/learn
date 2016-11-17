@@ -1,0 +1,101 @@
+.form{
+	width: 50%;margin: 0 auto;background-color: #ddd;padding: 20px 40px;
+}
+.inputBox{
+	margin-bottom: 15px;
+	input{
+		width: 200px;height: 32px;line-height: 32px;
+	}
+	label{
+		width: 100px;text-align: right;height: 32px;line-height: 32px;margin-right: 20px;
+		display: inline-block;
+	}
+}
+
+.radioBox{
+	label{
+		width: 100px;display: inline-block;text-align: right;height: 32px;line-height: 32px;
+	}
+	label:nth-child(2){
+		text-align: center;
+	}
+	label:nth-child(3){
+		text-align: center;
+	}
+
+}
+
+.selectBox{
+	margin-bottom: 15px;
+	label:nth-child(1){
+		width: 100px;text-align: right;display: inline-block;margin-right: 20px;
+	}
+	select{
+		width: 200px;text-align: center;
+		option{
+
+		}
+	}
+}
+
+
+.specialBox{
+	label{
+		width: 100px;text-align: right;height: 32px;line-height: 32px;margin-right: 20px;
+		display: inline-block;
+	}
+	input{
+		margin-left: 0px;
+	}
+}
+
+.notesBox{
+	margin-bottom: 15px;
+	label{
+		width: 100px;text-align: right;display: inline-block;margin-right: 20px;
+		line-height: -30px;
+	}
+	textarea{
+		width: 200px;margin-top: 20px;
+	}
+}
+
+.buttonBox{
+	text-align: center;
+
+}
+button{
+	width: 100px;height: 32px;line-height: 20px;text-align: center;margin-right: 20px;cursor: pointer;
+	border: 1px solid #ddd;border-radius: 6px;font-size: 14px;color: #fff;
+}
+
+
+
+
+.dataBox{
+	width: 50%;margin: 0 auto;margin-top: 15px;
+	p{
+		width: 100%;height: 30px;line-height: 30px;
+		span{
+			width: 100px;text-align: right;display: inline-block;
+		}
+		i{
+			display: inline-block;margin-left: 20px;font-style: normal;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

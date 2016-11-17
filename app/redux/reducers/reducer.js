@@ -1,7 +1,5 @@
 import * as types from '../constants/ActionTypes';
 
-
-
 const initialState = {
     value:'1',
 };

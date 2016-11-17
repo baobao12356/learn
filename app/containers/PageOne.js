@@ -2,10 +2,11 @@ import React,{PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import cx from 'classnames'; 
 import s from './PageOne.scss';
-
 import n from '../base/Base.css';
-
 import config from '../source/config.json';
+
+import CssIcon from '../components/CssIcon';
+import { MoveIcon } from '../components/CssIcon';
 
 class Greater extends React.Component {
 	constructor(props) {
@@ -17,8 +18,11 @@ class Greater extends React.Component {
 	}
 	render() {
 		return(
-			<div>
-		        {config.greetText}
+			<div className={cx(s.oneBox)}>
+		        {/*config.greetText*/}
+		        <CssIcon name="horn"></CssIcon>
+		        <MoveIcon name="starry"></MoveIcon>
+		        <MoveIcon name="mypra"></MoveIcon>
 		    </div>
 		)
 	}
