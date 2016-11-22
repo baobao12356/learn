@@ -11,6 +11,9 @@ import PageTwo from '../containers/PageTwo';
 import PageThree from '../containers/PageThree';
 import PageFour from '../containers/PageFour';
 
+import Galery from '../components/Galery';
+import IndexFour from '../components/IndexFour';
+
 export class Root extends React.Component {
 	constructor(props) {
 		super(props);
@@ -24,10 +27,13 @@ export class Root extends React.Component {
 			<Router history={this.props.history}>
 			    <Route path="/" component={NavBar}>
 			    	<IndexRoute component={Home}/>
-			    	<Route path="/one" component={PageOne}/>
-			    	<Route path="/two" component={PageTwo}/>
-			    	<Route path="/three" component={PageThree}/>
-			    	<Route path="/four" component={PageFour}/>
+			    	<Route path="one" component={PageOne}/>
+			    	<Route path="two" component={PageTwo}/>
+			    	<Route path="three" component={PageThree}/>
+			    	<Route path="four" component={PageFour}>
+			    		<IndexRoute component={IndexFour}/>
+			    		<Route path="galery" component={Galery} />
+			    	</Route>
 			    </Route>
 			</Router>
 		)

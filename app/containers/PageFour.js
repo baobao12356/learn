@@ -4,18 +4,24 @@ import cx from 'classnames';
 import s from './PageFour.scss';
 import n from '../base/Base.css';
 
+import Galery from '../components/Galery'
+
 class Greater extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			value:'123'
+		}
 		
 	}
 	componentDidMount() {
 		
 	}
 	render() {
+		
 		return(
 			<div>
-		        four  four  four
+		        {this.props.children}
 		    </div>
 		)
 	}

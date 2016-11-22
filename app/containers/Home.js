@@ -18,6 +18,7 @@ class Home extends React.Component {
 			value:'2222'
 		}
 		// dispatch(environment(data))
+
 	}
 	render() {
 		

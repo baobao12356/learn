@@ -143,7 +143,7 @@ export class Greater extends React.Component {
 					 <p><span>"email":</span><i>{values.email}</i></p>
 					 <p><span>"sex":</span><i>{values.sex}</i></p>
 					 <p><span>"favoriteColor":</span><i>{values.favoriteColor}</i></p>
-					 <p><span>"employed":</span><i>{values.employed.toString()}</i></p>
+					 <p><span>"employed":</span><i>{values.employed? values.employed.toString() : ''}</i></p>
 					 <p><span>"notes":</span><i>{values.notes}</i></p>
 				</div>
 			</div>

@@ -1,7 +1,7 @@
 import React,{PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
-
+import { connect } from 'react-redux';
 
 import Home from './Home';
 import NavLink from '../components/NavLink';
@@ -33,17 +33,38 @@ class Nav extends React.Component {
 
 
 class NavBar extends React.Component{
+	constructor(props) {
+		super(props);
+		
+	}
+	componentDidMount() {
+		
+	}
+	render() {
+		const { location, params } = this.props;
+		let showHead=true;
+		const pathname=location.pathname||'default';
+		const headLink=['/four/galery'].map( (item,index) => {
+			if(pathname.indexOf(item)!=-1){
+				showHead=false;
+			}
+		})
+		return (
+		  <div className={cx(s.root)}>
+		  		{ showHead && <Nav></Nav>}
+		    	{this.props.children || <Home />}
+		  </div>
+		);
 
-  render() {
-
-    return (
-      <div className={cx(s.root)}>
-      		<Nav></Nav>
-        	{this.props.children || <Home />}
-      </div>
-    );
-
-  }
+	}
 }
 
-export default NavBar
+const ValueMapState = (state) => {
+    const {environment:{value}} = state;
+    return {
+        value
+    }
+};
+
+export default connect(ValueMapState)(NavBar)
+
