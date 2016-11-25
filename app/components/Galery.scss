@@ -81,11 +81,9 @@
 	border-radius: 5px;
 }
 
-a:hover, a:visited, a:link, a:active {
+a:hover, a:link{
     text-decoration: none;
     color: #000;
 }
-a:hover{
-	color: #ccc;
-}
+
 

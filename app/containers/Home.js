@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { environment } from '../redux/actions/action';
 import cx from 'classnames'; 
-import n from '../base/Base.css';
+import s from './Home.scss';
 
+import n from '../base/Base.css';
 
 class Home extends React.Component {
 	constructor(props) {
@@ -18,13 +19,19 @@ class Home extends React.Component {
 			value:'2222'
 		}
 		// dispatch(environment(data))
-
+		
+	}
+	click(){
+		console.log($('#span')[0].innerHTML)
+		console.log($('#span')[0].id)
+		console.log($('#span'))
 	}
 	render() {
 		
 		return(
 			<div>
-		       <img src={require('../img/lake.jpg')} alt="湖"/>
+		       <img  onClick={this.click.bind(this)} src={require('../img/lake.jpg')} alt="湖"/>
+		       <span id="span">123</span>
 		    </div>
 		)
 	}

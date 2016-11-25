@@ -8,11 +8,11 @@ html {
 }
 
 a{
-	text-decoration: none
+	text-decoration: none !important;
 }
 
 li{
-	list-style-type: none
+	list-style-type: none;
 }
 body {
   margin: 0;

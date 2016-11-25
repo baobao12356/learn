@@ -62,12 +62,13 @@
 
 .buttonBox{
 	text-align: center;
+	
+	button{
+		width: 100px;height: 32px;line-height: 20px;text-align: center;margin-right: 20px;cursor: pointer;
+		border: 1px solid #ddd;border-radius: 6px;font-size: 14px;color: #fff;
+	}
+}
 
-}
-button{
-	width: 100px;height: 32px;line-height: 20px;text-align: center;margin-right: 20px;cursor: pointer;
-	border: 1px solid #ddd;border-radius: 6px;font-size: 14px;color: #fff;
-}
 
 
 

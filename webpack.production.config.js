@@ -24,7 +24,7 @@ module.exports = {
           },
            {
               test: /\.(png|jpg|jpeg|gif|svg)$/,
-              loader: 'url-loader?limit=50000&name=img/[hash:3].[name].[ext]',
+              loader: 'url-loader?limit=10000&name=img/[hash:3].[name].[ext]',
           },
           {
               test: /\.(eot|ttf|wav|mp3)$/,

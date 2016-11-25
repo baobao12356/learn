@@ -24,7 +24,7 @@ class Nav extends React.Component {
 				<li><NavLink to="/one">pageOne</NavLink></li>			
 				<li><NavLink to="/two">pageTwo</NavLink></li>			
 				<li><NavLink to="/three">pageThree</NavLink></li>			
-				<li><NavLink to="/four">pageFour</NavLink></li>			
+				<li><NavLink to="/demo">DEMO篇</NavLink></li>			
 			</ul>
 		)
 	}
@@ -44,7 +44,7 @@ class NavBar extends React.Component{
 		const { location, params } = this.props;
 		let showHead=true;
 		const pathname=location.pathname||'default';
-		const headLink=['/four/galery'].map( (item,index) => {
+		const headLink=['/demo/galery'].map( (item,index) => {
 			if(pathname.indexOf(item)!=-1){
 				showHead=false;
 			}

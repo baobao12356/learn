@@ -24,12 +24,12 @@ module.exports = {
             // 		'css-loader?{"sourceMap":true,"modules":true,"localIdentName":"[name]_[local]_[hash:base64:3]","minimize":false}',  
             // 		"sass-loader?sourceMap",
             // 	]
-            // loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass?sourceMap"]
-          	loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass"]
+            loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass?sourceMap"]
+          	// loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass"]
           },
           {
               test: /\.(png|jpg|jpeg|gif|svg)$/,
-              loader: 'url-loader?limit=50000&name=img/[hash:3].[name].[ext]',
+              loader: 'url-loader?limit=10000&name=img/[hash:3].[name].[ext]',
           },
           {
               test: /\.(eot|ttf|wav|mp3)$/,
@@ -63,10 +63,16 @@ module.exports = {
 	      }
 	    ]
 	},
+	resolve: {
+	    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.json']
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 	      template: __dirname + "/app/index.html"//new 一个这个插件的实例，并传入相关的参数
 	    }),
+	    new webpack.ProvidePlugin({
+		    $: "jquery"
+		}),
 	    // new OpenBrowserPlugin({      //dev-server 具有这个功能
 	    //   url: 'http://localhost:8000'
 	    // }),

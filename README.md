@@ -1,7 +1,22 @@
 # learn
 learn webpack react about my web Station
 
-运行项目：
+一、此项目的问题所在，希望路过的大神给予解决<br />
+1）js文件中不能正常的书写相对路径得到图片<br />
+2）当相对路径能用时，打包文件后图片的路径就不对了<br />
+解决上面的问题是，require('../img/1.jpg')  只能这样才能解决上面的问题，如何能够用相对路径引用，来解决上面的这两个问题<br />
+
+2）各scss文件如果写出标签样式，会污染以后的每个文件<br />
+例如：<br />
+a.scss  文件中写了button｛ color：red ｝<br />
+以后写每个文件，只要写了button，都会有这个样式，<br />
+
+求解决。<br />
+qq:361196961<br />
+<br />
+
+
+运行项目：<br />
 
 <div style="width:100%; height:30px; background-color:#ccc; line-height:30px; ">
 	1、npm i    			<br />

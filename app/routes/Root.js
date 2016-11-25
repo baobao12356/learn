@@ -30,7 +30,7 @@ export class Root extends React.Component {
 			    	<Route path="one" component={PageOne}/>
 			    	<Route path="two" component={PageTwo}/>
 			    	<Route path="three" component={PageThree}/>
-			    	<Route path="four" component={PageFour}>
+			    	<Route path="demo" component={PageFour}>
 			    		<IndexRoute component={IndexFour}/>
 			    		<Route path="galery" component={Galery} />
 			    	</Route>

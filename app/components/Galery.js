@@ -315,7 +315,7 @@ export class Galery extends React.Component {
 						})
 					}
 				</div>
-				<a href="#/four" className={cx(s.back)}>返回</a>
+				<a href="#/demo" className={cx(s.back)}>返回</a>
 	        </div>
 		)
 	}

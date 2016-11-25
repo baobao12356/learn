@@ -12,7 +12,7 @@ class IndexFour extends React.Component {
 	render() {
 		return(
 			<div>
-				第一个例子：<a href="#/four/galery">Galery</a>
+				第一个例子：<a href="#/demo/galery">Galery</a>
 			</div>
 		)
 	}

@@ -23,6 +23,7 @@ class Greater extends React.Component {
 		        <CssIcon name="horn"></CssIcon>
 		        <MoveIcon name="starry"></MoveIcon>
 		        <MoveIcon name="mypra"></MoveIcon>
+		        <button>测试button按钮</button>
 		    </div>
 		)
 	}
