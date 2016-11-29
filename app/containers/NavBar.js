@@ -44,7 +44,7 @@ class NavBar extends React.Component{
 		const { location, params } = this.props;
 		let showHead=true;
 		const pathname=location.pathname||'default';
-		const headLink=['/demo/galery'].map( (item,index) => {
+		const headLink=['/demo/galery','/demo/native'].map( (item,index) => {
 			if(pathname.indexOf(item)!=-1){
 				showHead=false;
 			}

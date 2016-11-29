@@ -12,7 +12,10 @@ import PageThree from '../containers/PageThree';
 import PageFour from '../containers/PageFour';
 
 import Galery from '../components/Galery';
+import Native from '../components/Native';
 import IndexFour from '../components/IndexFour';
+
+
 
 export class Root extends React.Component {
 	constructor(props) {
@@ -33,6 +36,7 @@ export class Root extends React.Component {
 			    	<Route path="demo" component={PageFour}>
 			    		<IndexRoute component={IndexFour}/>
 			    		<Route path="galery" component={Galery} />
+			    		<Route path="native" component={Native} />
 			    	</Route>
 			    </Route>
 			</Router>

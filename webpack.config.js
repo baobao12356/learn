@@ -1,9 +1,10 @@
 var webpack = require('webpack');
+var path  = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 
-module.exports = {
+var webpackConfig =  {
 	devtool: 'eval-source-map',//配置生成Source Maps，选择合适的选项
   	entry:  [__dirname + "/app/main.js", 'webpack-hot-middleware/client' ],//已多次提及的唯一入口文件
   	output: {
@@ -18,52 +19,63 @@ module.exports = {
 	        loader: "json-loader"
 	      },
 	      {
-            test: /\.scss$/,
-            // loaders: [
-            // 		"style-loader",
-            // 		'css-loader?{"sourceMap":true,"modules":true,"localIdentName":"[name]_[local]_[hash:base64:3]","minimize":false}',  
-            // 		"sass-loader?sourceMap",
-            // 	]
-            loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass?sourceMap"]
-          	// loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass"]
-          },
-          {
-              test: /\.(png|jpg|jpeg|gif|svg)$/,
-              loader: 'url-loader?limit=10000&name=img/[hash:3].[name].[ext]',
-          },
-          {
-              test: /\.(eot|ttf|wav|mp3)$/,
-              loader: 'file-loader',
-          },
+          test: /\.scss$/,
+          loaders: [
+          		"style-loader",
+          		'css-loader?{"sourceMap":true,"modules":true,"localIdentName":"[name]_[local]_[hash:base64:3]","minimize":false}',  
+          		"sass-loader?sourceMap",
+          	]
+          // loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass?sourceMap"]
+        },
+        {
+            test: /\.(png|jpg|jpeg|gif|svg)$/,
+            loader: 'url-loader?limit=10000&name=img/[hash:3].[name].[ext]',
+        },
+        {
+            test: /\.(eot|ttf|wav|mp3)$/,
+            loader: 'file-loader',
+        },
 	      {
 	        test: /\.css$/,
-	        loader: 'style!css?modules!postcss'//添加对样式表的处理  
+	        loader: 'style-loader!css-loader'//添加对样式表的处理  
+	        // loader: 'style!css?modules!postcss'//添加对样式表的处理  
 	        // loader: 'style!css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:2]' 
 	      },
 	      {
-	        test: /\.(js|jsx?)$/,
-	        exclude: /node_modules/,
-	        loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
-	        query: {
-	          presets: ['es2015','stage-0','react'],
-	          "env": {
-					    "development": {
-					    "plugins": [["react-transform", {
-					       "transforms": [{
-					         "transform": "react-transform-hmr",
-
-					         "imports": ["react"],
-
-					         "locals": ["module"]
-					       }]
-					     }]]
-					    }
-					  }
-			}
-	      }
+              test: /\.(js|jsx?)$/, 
+              exclude: /node_modules/,
+              loader: 'babel-loader', 
+              query:{  
+                babelrc: false,
+                presets: [
+                    'react', 
+                    'es2015',
+                    'stage-0' 
+                ],
+                env:{
+                  development:{
+                    plugins:[
+                      ['react-transform',{
+                        'transforms': [
+                          {
+                            transform: 'react-transform-hmr',
+                            imports: ['react'],
+                            locals: ['module'],
+                          } 
+                        ] 
+                      }]
+                    ]
+                  }
+                },  
+                plugins: [ 
+                  'add-module-exports'
+                ]
+              }
+            }
 	    ]
 	},
 	resolve: {
+      modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
 	    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.json']
 	},
 	plugins: [
@@ -95,3 +107,11 @@ module.exports = {
 	    Info:true
 	}
 }
+
+webpackConfig.module.loaders[5].query.plugins.push(['import', { libraryName: 'antd-mobile', style: 'css' }]);
+module.exports =  webpackConfig;
+
+
+
+
+

@@ -76,13 +76,14 @@ class Union extends React.Component {
 	}
 	handleClick(index,e){
     	console.log('点击的事导航',index)
+    	e.preventDefault();
+        e.stopPropagation();
         if (this.props.range.isCenter) {
             this.props.inverse(index);
         } else {
             this.props.center(index);
         }
-        e.preventDefault();
-        e.stopPropagation();
+        
     }
 
 	render() {

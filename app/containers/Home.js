@@ -21,16 +21,14 @@ class Home extends React.Component {
 		// dispatch(environment(data))
 		
 	}
-	click(){
-		console.log($('#span')[0].innerHTML)
-		console.log($('#span')[0].id)
-		console.log($('#span'))
-	}
+	
 	render() {
 		
 		return(
 			<div>
-		       <img  onClick={this.click.bind(this)} src={require('../img/lake.jpg')} alt="湖"/>
+		       <img src={require('../img/lake.jpg')} alt="湖"/>
+		       <img src="../img/lake.jpg" alt="湖"/>
+
 		       <span id="span">123</span>
 		    </div>
 		)
