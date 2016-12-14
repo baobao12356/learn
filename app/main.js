@@ -5,7 +5,7 @@ import { hashHistory } from 'react-router';
 import rootReducer from './redux/reducers'
 import { createStore } from 'redux';
 import configureStore from './redux/configReducer';
-
+require('./base/Base.css');
 import 'antd/dist/antd.css';
 import Root from './routes/Root'
 

@@ -1,4 +1,58 @@
 
-.nativeBox{
-	margin: 100px auto;
+.roadBox{
+	width: 700px;height: 402px;border: 1px solid #eee;box-sizing:border-box;
+	margin: 0 auto;background: green;position: relative;
+	overflow: hidden;
+	.road{
+		width: 400px;height: 800px;position: absolute;left: 50%;top: 0;margin-left: -200px;
+		transform: translateY(-400px);
+	}
+	.gameBox{
+		width: 400px;height: 800px;position: absolute;left: 50%;top: 0;margin-left: -200px;
+
+		.hero{ //自己的车
+			width: 50px;height: 100px;border-radius: 20px;background: #ccf;position: absolute;
+			bottom: 400px;
+		}
+		.left{
+			left: 25px;
+		}
+		.right{
+			left: 125px;
+		}
+
+		.enemy{
+			width: 50px;height: 100px;border-radius: 20px;background: #ffc;position: absolute;
+			top: 0px;
+		}
+
+
+	}
 }
+
+.enemyRun{
+	-webkit-animation: enemyRun 4s linear;
+}
+@-webkit-keyframes enemyRun {
+	100% {
+		-webkit-transform: translateY(800px);
+	}
+}
+
+.roadRun{
+	 -webkit-transform:translateZ(0);
+	-webkit-animation: roadRun 5s linear infinite;
+}
+@-webkit-keyframes roadRun {
+	100% {
+		-webkit-transform: translateY(0px);
+	}
+}
+
+.meter{
+	position: absolute;left: 0;top: 100px;width: 100px;height: 30px;line-height: 30px;text-align: center;
+	background-color: #fff;font-style: 16px;
+}
+
+
+

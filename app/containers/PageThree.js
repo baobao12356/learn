@@ -27,14 +27,18 @@ class RenderField extends React.Component{
 }
 
 
+
 class ContactForm extends React.Component {
 	constructor(props) {
 		super(props);
 		
 	}
+	componentDidMount() {
+		
+	}
+	
 	
 	render() {
-		console.log(this.props)
 		const { handleSubmit, pristine, reset, submitting } = this.props;
 		return(
 	        <form onSubmit={handleSubmit} className={cx(s.form)}>
