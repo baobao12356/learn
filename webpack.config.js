@@ -42,7 +42,6 @@ var webpackConfig =  {
           // loader: ExtractTextPlugin.extract("style-loader", "css-loader")}//样式单独打印出来 
 	        loader: 'style-loader!css-loader'//添加对样式表的处理  
 	        // loader: 'style!css?modules!postcss'//添加对样式表的处理  
-	        // loader: 'style!css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:2]' 
 	      },
 	      {
               test: /\.(js|jsx?)$/, 
