@@ -1,4 +1,6 @@
-
+.clearfix:after{
+	content: '';clear: both;display: block;
+}
 
 .oneBox{
 	padding: 20px;
@@ -8,3 +10,13 @@
 	}
 }
 
+.ulBox{
+	width: 100%;
+	li{
+		width: 100px;text-align: center;line-height: 100px;border: 1px solid #ccc;float: left;
+		margin: 20px;cursor: pointer;font-size: 30px;
+	}
+}
+.dif{
+	background-color: #ccf;
+}

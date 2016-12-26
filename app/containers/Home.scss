@@ -1,0 +1,10 @@
+$http:'http://localhost:8000/';
+
+.box{
+	width: 300px;height: 300px;border: 1px solid #ccc;
+}
+.one{
+	width: 300px;height: 300px;border: 1px solid red;
+	background: url($http+'img/2.jpg') no-repeat 100% 100%;
+	// background: url('../img/2.jpg') no-repeat 100% 100%;
+}

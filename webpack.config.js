@@ -23,8 +23,9 @@ var webpackConfig =  {
           test: /\.scss$/,
           loaders: [
           		"style-loader",
-          		'css-loader?{"sourceMap":true,"modules":true,"localIdentName":"[name]_[local]_[hash:base64:3]","minimize":false}',  
-          		"sass-loader?sourceMap",
+              'css-loader?{"sourceMap":true,"modules":true,"localIdentName":"[name]_[local]_[hash:base64:3]","minimize":false}',  
+          		"postcss-loader", 
+              "sass-loader?sourceMap",
           	]
           // loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass?sourceMap"]
         },
@@ -85,13 +86,18 @@ var webpackConfig =  {
 	      template: __dirname + "/app/index.html"//new 一个这个插件的实例，并传入相关的参数
 	    }),
 	    new webpack.ProvidePlugin({
-		    $: "jquery"
+		    $: "jquery",
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        'window.$': 'jquery',
 		  }),
 	    // new OpenBrowserPlugin({      //dev-server 具有这个功能
 	    //   url: 'http://localhost:8000'
 	    // }),
 	    new webpack.DefinePlugin({
-	    	__DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+	    	// __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false')),
+        HTTP:JSON.stringify("http://localhost:8000"),
+        __DEV__:JSON.stringify(false)
 	    }),
 	    new webpack.HotModuleReplacementPlugin(),//热加载插件
 	    new webpack.optimize.OccurenceOrderPlugin(true),

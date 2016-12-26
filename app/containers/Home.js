@@ -6,8 +6,6 @@ import { environment } from '../redux/actions/action';
 import cx from 'classnames';
 import s from './Home.scss';
 
-import n from '../base/Base.css';
-
 class Home extends React.Component {
 	constructor(props) {
 		super(props);
@@ -23,11 +21,13 @@ class Home extends React.Component {
 	}
 
 	render() {
-
+		
 		return (
 			<div>
 				<img src={require('../img/lake.jpg')} alt="湖" />
 				<span id="span">123</span>
+				<div className={cx(s.box,'bg')}>111</div>
+				<div className={cx(s.one)}>2222</div>
 			</div>
 		)
 	}

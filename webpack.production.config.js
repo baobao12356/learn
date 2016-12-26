@@ -30,7 +30,7 @@ module.exports = {
         },
         {
             test: /\.(eot|ttf|wav|mp3)$/,
-            loader: 'file-loader',
+            loader: 'file-loader?name=fonts/[hash:3].[name].[ext]',
         },
 	      {    
             test: /\.css$/, 
@@ -77,8 +77,15 @@ module.exports = {
             }
 	    }),
 	    new webpack.ProvidePlugin({
-		    $: "jquery"
-		}),
+		    $: "jquery",
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        'window.$': 'jquery'
+		  }),
+      new webpack.DefinePlugin({
+        HTTP:JSON.stringify("http://localhost:8000"),
+        'http://localhost:8000':'./'
+      }),
 	    new webpack.optimize.OccurenceOrderPlugin(true),
       new ExtractTextPlugin("css/[name].css"),//生成的css样式文件
 	    // new webpack.optimize.UglifyJsPlugin(),   // 压缩代码
