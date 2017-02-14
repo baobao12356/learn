@@ -3,15 +3,17 @@ var path  = require('path');
 // var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-
+const DEBUG=process.env.DEBUG;
+console.log('-----',DEBUG)
 var webpackConfig =  {
 	  devtool: 'eval-source-map',//配置生成Source Maps，选择合适的选项
   	entry:  [__dirname + "/app/main.js", 'webpack-hot-middleware/client' ],//已多次提及的唯一入口文件
   	output: {
     	path: __dirname + "/build",//打包后的文件存放的地方
     	filename: "bundle.js",//打包后输出文件的文件名
-    	publicPath: '/'
+    	// publicPath: '/'   //这里只要换成./页面就不显示，耶不报错
   	},
   	module: {//在配置文件里添加JSON loader
 	    loaders: [
@@ -23,8 +25,8 @@ var webpackConfig =  {
           test: /\.scss$/,
           loaders: [
           		"style-loader",
-              'css-loader?{"sourceMap":true,"modules":true,"localIdentName":"[name]_[local]_[hash:base64:3]","minimize":false}',  
-          		"postcss-loader", 
+              'css-loader?{"sourceMap":false,"modules":true,"localIdentName":"[name]_[local]_[hash:base64:3]","minimize":false}',  
+          		// "postcss-loader", 
               "sass-loader?sourceMap",
           	]
           // loaders: ["style", "css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]", "sass?sourceMap"]
@@ -32,6 +34,7 @@ var webpackConfig =  {
         {
             test: /\.(png|jpg|jpeg|gif|svg)$/,
             loader: 'url-loader?limit=10000&name=img/[hash:3].[name].[ext]',
+            // loader: 'url-loader?limit=10000&name=img/[name].[ext]',
         },
         {
             test: /\.(eot|ttf|wav|mp3)$/,
@@ -39,9 +42,10 @@ var webpackConfig =  {
         },
 	      {
 	        test: /\.css$/,
-          // loader: ExtractTextPlugin.extract("style-loader", "css-loader")}//样式单独打印出来 
-	        loader: 'style-loader!css-loader'//添加对样式表的处理  
+          loader: ExtractTextPlugin.extract("style-loader", "css-loader")//样式单独打印出来 
+	        // loader: 'style-loader!css-loader'//添加对样式表的处理  
 	        // loader: 'style!css?modules!postcss'//添加对样式表的处理  
+	        // loader: 'style!css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:2]' 
 	      },
 	      {
               test: /\.(js|jsx?)$/, 
@@ -69,15 +73,15 @@ var webpackConfig =  {
                     ]
                   }
                 },  
-                plugins: [ 
-                  'add-module-exports'
-                ]
+                // plugins: [ 
+                //   'add-module-exports'
+                // ]
               }
-            }
+        }
 	    ]
 	},
 	resolve: {
-      modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],//为了使用antd-mobile
+      // modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],//为了使用antd-mobile
 	    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.json']
 	},
 	plugins: [
@@ -95,27 +99,28 @@ var webpackConfig =  {
 	    // }),
 	    new webpack.DefinePlugin({
 	    	__DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false')),
+        devTools:DEBUG
 	    }),
+      new ExtractTextPlugin("css/[name].css"),//生成的css样式文件
 	    new webpack.HotModuleReplacementPlugin(),//热加载插件
 	    new webpack.optimize.OccurenceOrderPlugin(true),
-      // new ExtractTextPlugin("css/[name].css"),//生成的css样式文件
 	],
-	postcss: [
-	    require('autoprefixer')//调用autoprefixer插件
-	],
-  	devServer: {
-	    contentBase: "./app",//本地服务器所加载的页面所在的目录
-	    colors: true,//终端中输出结果为彩色
-	    historyApiFallback: true,//不跳转
-	    inline: true,//实时刷新
-	    hot: true,
-	    port:"8000",
-	    Info:true
-	}
+	// postcss: [
+	//     require('autoprefixer')//调用autoprefixer插件
+	// ],
+ //  	devServer: {
+	//     contentBase: "./build",//本地服务器所加载的页面所在的目录
+	//     colors: true,//终端中输出结果为彩色
+	//     historyApiFallback: true,//不跳转
+	//     inline: true,//实时刷新
+	//     hot: true,
+	//     port:"6060",
+	//     Info:true
+	// }
 }
 
 //为了使用antd-mobile
-webpackConfig.module.loaders[5].query.plugins.push(['import', { libraryName: 'antd-mobile', style: 'css' }]);
+// webpackConfig.module.loaders[5].query.plugins.push(['import', { libraryName: 'antd-mobile', style: 'css' }]);
 module.exports =  webpackConfig;
 
 

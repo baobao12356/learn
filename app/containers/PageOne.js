@@ -40,6 +40,7 @@ class Greater extends React.Component {
 	
 	render() {
 		console.log('--',this.state.type);
+		//style={{width:200,height:200,color:'red',backgroundImage:`url${require('../../public/img/icon/fail.png')}`}}
 		const element=React.createElement('div',{className:'box',key:'1',name:'1'},'123')
 		const lel='<div>456</div>'
 		// console.log(React.isValidElement(lel))

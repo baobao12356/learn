@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --progress",
-    "build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress",
-    "play": "node server.js"
+    "play": "webpack-dev-server --progress",
+    "build": "NODE_ENV=production env DEBUG=false webpack --config ./webpack.production.config.js --progress",
+    "start": "env DEBUG=true node server.js "
   },
   "author": "cm",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-preset-stage-2": "^6.18.0",
     "classnames": "^2.2.5",
+    "clean-webpack-plugin": "^0.1.15",
     "css-loader": "^0.25.0",
     "eslint": "^3.10.2",
     "extract-text-webpack-plugin": "^1.0.1",

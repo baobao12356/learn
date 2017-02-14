@@ -47,11 +47,12 @@ export class Root extends React.Component {
 		return <DevTools />
 	}
 	render() {
+		console.log('组件里面',devTools)
 		return(
 			<Provider store={this.props.store}>
 		        <div style={{ height: '100vh',width:'100vw'}}>
 		          {this.getContent()}
-		          {this.getDevTools()}
+		          { devTools ? this.getDevTools() : null}
 		        </div>
 		    </Provider>
 		)

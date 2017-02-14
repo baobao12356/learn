@@ -11,9 +11,7 @@ import Root from './routes/Root'
 
 let store=configureStore()
 // let store=createStore(rootReducer)
-if(__DEV__){
-	console.log('这里有环境变量－－－－－－－－－－－－－－@@@@@@@@@@@@@')
-}
+
 
 render(
 	<Root store={store} history={hashHistory}/>
