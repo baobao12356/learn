@@ -94,9 +94,7 @@ var webpackConfig =  {
 	    //   url: 'http://localhost:8000'
 	    // }),
 	    new webpack.DefinePlugin({
-	    	// __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false')),
-        HTTP:JSON.stringify("http://localhost:8000"),
-        __DEV__:JSON.stringify(false)
+	    	__DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false')),
 	    }),
 	    new webpack.HotModuleReplacementPlugin(),//热加载插件
 	    new webpack.optimize.OccurenceOrderPlugin(true),
