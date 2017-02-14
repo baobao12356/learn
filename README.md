@@ -2,6 +2,7 @@
 learn webpack react about my web Station
 
 一、此项目是express启动项目，server.js是其配置文件。<br />
+（express + webpack + react + react-redux）<br />
 
 运行项目：<br />
 
